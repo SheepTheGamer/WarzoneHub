@@ -69,6 +69,12 @@ public class NavigationCompassListener implements Listener {
 	public Location hubloc = new Location(Bukkit.getWorld("Lobby"), -15.5, 110, 256.5, 0, 0);
 	public Location vaultloc = new Location(Bukkit.getWorld("world"), -12.5, 45, 928.5, 0, 0);
 	
+	private static NavigationCompassListener instance = new NavigationCompassListener();
+
+	public static NavigationCompassListener getInstance() {
+		return instance;
+	}
+	
 	@EventHandler (priority = EventPriority.HIGHEST)
 	public void onPlayerCompassUse(PlayerInteractEvent event) {
 		Player p = event.getPlayer();
