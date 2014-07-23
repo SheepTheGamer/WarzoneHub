@@ -1,0 +1,6 @@
+name: WarzoneHub
+version: 0.0.1
+main: io.github.mamifsidtect.warzonehub.MCTheWarzoneHub
+author: mamifsidtect
+commands:
+  booktest:

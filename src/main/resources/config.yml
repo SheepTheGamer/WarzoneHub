@@ -1,0 +1,114 @@
+#####################################################################
+#                                                                   #
+#           This is the default configuration for the hub           #
+#                 You can change it however you want                #
+#                      Config Version: 0.0.0.3                      #
+#                        Author: mamifsidtect                       #
+#                                                                   #
+#####################################################################
+Player Join Items:
+  Barker:
+    Enabled: true
+    Inventory Slot: 2
+  Flare Gun:
+    Enabled: true
+    Inventory Slot: 3
+  Jumper:
+    Enabled: true
+    Inventory Slot: 4
+  Snowballer:
+    Enabled: true
+    Inventory Slot: 1
+  Lightning Rod:
+    Enabled: true
+    Inventory Slot: 6
+  #The items below cannot be disabled, but can be put in a specific slot
+  Shop Stick:
+    Inventory Slot: 5
+  Welcome Book:
+    Inventory Slot: 9
+  Navigator:
+    Inventory Slot: 8
+Inventories:
+  #Navigator Compass Menu
+  Compass Menu:
+    Size: 9
+    Items:
+      The Vault: 2
+      Golden Gun: 8
+      Hub: 5
+  #Main Shop Menu
+  Main Shop Screen:
+    Size: 9
+    Items:
+      Trail Shop: 2
+      Pet Shop: 4
+      Map Shop: 6
+      Kit Shop: 8
+  #Kit Shop
+  Kit Shop Screen:
+    Size: 9
+    Items:
+      Slugger: 3
+      Heavy: 7
+  #Map shop
+  Map Shop Screen:
+    Size: 9
+  #Trail Shop
+  Trail Shop Screen:
+    Size: 36
+    Items:
+      Block Break: 1
+      Cloud: 2
+      Cookie: 3
+      Crits: 4
+      Lava Pops: 5
+      Ender Signal: 6
+      Explosions: 7
+      ItemSpray: 8
+      Fire: 9
+      Fireworks: 10
+      Footsteps: 11
+      Hearts: 12
+      Lava Drips: 13
+      Magic: 14
+      Rainbow Notes: 15
+      Portal: 16
+      Potions: 17
+      Rainbow Swirl: 18
+      Enchant Symbols: 19
+      Slime: 20
+      Smoke: 21
+      Snow: 22
+      Snowball: 23
+      Crop Sparkles: 24
+      Water Splash: 25
+      Void: 26
+      Water Drip: 27
+  #Pet Shop
+  Pet Shop Screen:
+    Size: 36
+    Items:
+      Blaze: 1
+      Cavespider: 2
+      Creeper: 3
+      Enderman: 7
+      Pig Zombie: 8
+      Skeleton: 9
+      Slime: 10
+      Magma Cube: 11
+      Spider: 12
+      Witch: 16
+      Snowman: 17
+      Zombie: 18
+      Bat: 19
+      Cow: 20
+      Horse: 21
+      Irongolem: 25
+      Mushroom Cow: 26
+      Ocelot: 27
+      Pig: 28
+      Sheep: 30
+      Squid: 32
+      Villager: 34
+      Wolf: 36

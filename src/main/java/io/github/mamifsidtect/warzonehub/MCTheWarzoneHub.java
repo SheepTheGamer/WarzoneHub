@@ -16,6 +16,7 @@ import io.github.mamifsidtect.warzonehub.listeners.ShopInventoryListener;
 import io.github.mamifsidtect.warzonehub.listeners.ShopStickListener;
 import io.github.mamifsidtect.warzonehub.listeners.SnowballerListener;
 import io.github.mamifsidtect.warzonehub.listeners.TrailShopInventoryListener;
+import io.github.mamifsidtect.warzonehub.listeners.VoidListener;
 
 import java.util.logging.Logger;
 
@@ -123,6 +124,7 @@ public class MCTheWarzoneHub extends JavaPlugin {
 		pm.registerEvents(new KitShopInventoryListener(), this);
 		pm.registerEvents(new TrailShopInventoryListener(), this);
 		pm.registerEvents(new EquipmentMenuListener(), this);
+		pm.registerEvents(new VoidListener(), this);
 		pm.registerEvents(new NavigationCompassListener(), this);
 		
 		setupPermissions();
