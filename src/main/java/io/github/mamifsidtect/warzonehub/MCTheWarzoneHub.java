@@ -12,11 +12,13 @@ import io.github.mamifsidtect.warzonehub.listeners.LightningRodListener;
 import io.github.mamifsidtect.warzonehub.listeners.MapShopInventoryListener;
 import io.github.mamifsidtect.warzonehub.listeners.NavigationCompassListener;
 import io.github.mamifsidtect.warzonehub.listeners.PetShopInventoryListener;
+import io.github.mamifsidtect.warzonehub.listeners.ScoreboardListener;
 import io.github.mamifsidtect.warzonehub.listeners.ShopInventoryListener;
 import io.github.mamifsidtect.warzonehub.listeners.ShopStickListener;
 import io.github.mamifsidtect.warzonehub.listeners.SnowballerListener;
 import io.github.mamifsidtect.warzonehub.listeners.TrailShopInventoryListener;
 import io.github.mamifsidtect.warzonehub.listeners.VoidListener;
+import io.github.mamifsidtect.warzonehub.listeners.WeatherChangeListener;
 
 import java.util.logging.Logger;
 
@@ -57,6 +59,7 @@ public class MCTheWarzoneHub extends JavaPlugin {
 	public final PetShopInventoryListener psil = new PetShopInventoryListener();
 	public final TrailShopInventoryListener tsil = new TrailShopInventoryListener();
 	public final NavigationCompassListener ncl = new NavigationCompassListener();
+	public final KitShopInventoryListener ksil = new KitShopInventoryListener();
 	public final BookListener bl = new BookListener();
 	
 	Logger logger = Logger.getLogger("Minecraft");
@@ -76,7 +79,6 @@ public class MCTheWarzoneHub extends JavaPlugin {
 			saveResource("config.yml", true);
 		} else {
 			logger.info("Using previous config!");
-			saveResource("config.yml", false);
 		}
 		//End
 		
@@ -84,7 +86,8 @@ public class MCTheWarzoneHub extends JavaPlugin {
 			
 		}
 		kitShopMenu = Bukkit.createInventory(null, configuration.getInt("Kit Shop Screen.Size", 9), ChatColor.BLUE + "Kit Shop"); {
-			
+			kitShopMenu.setItem(2, new ItemStack(ksil.heavy));
+			kitShopMenu.setItem(6, new ItemStack(ksil.slugger));
 		}		
 		mapShopMenu = Bukkit.createInventory(null, configuration.getInt("Map Shop Screen.Size", 9), ChatColor.BLUE + "Map Shop"); {
 			
@@ -104,9 +107,8 @@ public class MCTheWarzoneHub extends JavaPlugin {
 		}
 		
 		compassMenu = Bukkit.createInventory(null, configuration.getInt("Inventories.Compass Menu.Size"), ChatColor.BLUE + "Navigation Menu"); {
-			compassMenu.setItem(1, new ItemStack(ncl.vault));
-			compassMenu.setItem(7, new ItemStack(ncl.goldengun));
-			compassMenu.setItem(4, new ItemStack(ncl.hub));
+			compassMenu.setItem(2, new ItemStack(ncl.goldengun));
+			compassMenu.setItem(6, new ItemStack(ncl.hub));
 		}
 		
 		pm.registerEvents(new SnowballerListener(), this);
@@ -126,6 +128,8 @@ public class MCTheWarzoneHub extends JavaPlugin {
 		pm.registerEvents(new EquipmentMenuListener(), this);
 		pm.registerEvents(new VoidListener(), this);
 		pm.registerEvents(new NavigationCompassListener(), this);
+		pm.registerEvents(new ScoreboardListener(), this);
+		pm.registerEvents(new WeatherChangeListener(), this);
 		
 		setupPermissions();
 		setupEconomy();

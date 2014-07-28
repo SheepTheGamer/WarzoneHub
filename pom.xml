@@ -4,7 +4,11 @@
   <artifactId>MCTheWarzoneHub</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>MCTheWarzoneHub</name>
-    <properties>
+  <build>
+    <directory>${project.basedir}/target</directory>
+    <outputDirectory>${project.build.directory}/TestServer/plugins/</outputDirectory>
+  </build>
+  <properties>
 	<maven.compiler.source>1.7</maven.compiler.source>
 	<maven.compiler.target>1.7</maven.compiler.target>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,6 +43,11 @@
       <groupId>echopet</groupId>
       <artifactId>echopet-api</artifactId>
       <version>4.2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>goldengun</groupId>
+      <artifactId>goldengun-api</artifactId>
+      <version>0.0.1</version>
     </dependency>
   </dependencies>
 </project>

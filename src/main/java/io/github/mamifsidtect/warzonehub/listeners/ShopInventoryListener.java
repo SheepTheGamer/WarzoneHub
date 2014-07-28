@@ -51,7 +51,7 @@ public class ShopInventoryListener implements Listener {
 	public final ItemStack kits = new ItemStack(Material.GOLD_AXE); {
 		ItemMeta kmeta = kits.getItemMeta();
 		ArrayList<String> k = new ArrayList<String>();
-		kmeta.setDisplayName(ChatColor.GOLD + "GoldenGun Kit Shop");
+		kmeta.setDisplayName(ChatColor.GOLD + "Kit Shop");
 		k.add("");
 		k.add(ChatColor.YELLOW + "Destroy people with new kits!");
 		k.add(ChatColor.YELLOW + "Or just brag that you own them...");

@@ -4,7 +4,9 @@ import io.github.mamifsidtect.warzonehub.MCTheWarzoneHub;
 
 import java.util.ArrayList;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -50,6 +52,7 @@ public class SnowballerListener implements Listener {
 		Player p = event.getPlayer();
 		if (MCTheWarzoneHub.getPlugin().getConfig().getBoolean("Player Join Items.Snowballer.Enabled") == true) {
 			event.setJoinMessage(null);
+			p.teleport(new Location(Bukkit.getWorld("Lobby"), -15.5, 110, 256.5, 0, 0));
 			p.getInventory().clear();
 			p.getInventory().setItem(MCTheWarzoneHub.getPlugin().getConfig().getInt("Player Join Items.Snowballer.Inventory Slot") - 1, new ItemStack(snowballer));
 		}

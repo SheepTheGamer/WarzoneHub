@@ -32,12 +32,7 @@ public class BookListener implements Listener {
 						+ " feedback on the forums!");
 		
 		//page 2
-		bmeta.setPage(2, ChatColor.DARK_RED + "Rules                        "
-				+ "                           "
-				+ ChatColor.BLACK + "" + ChatColor.BOLD + "1.) No unapproved mods.                      "
-				+ "                 2.) No advertising"
-				+ "                        3.) Do not abuse or exploit bugs or glitches"
-				+ "                                  4.) Respect all staff and players");
+		bmeta.setPage(2, ChatColor.DARK_RED + "");
 		
 		bmeta.setAuthor("MCTheWarzone");
 		bmeta.setDisplayName(ChatColor.GOLD + "Welcome to MCTheWarzone!");

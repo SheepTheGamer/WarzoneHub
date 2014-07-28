@@ -33,7 +33,12 @@ public class ShopStickListener implements Listener {
 		Player p = event.getPlayer();
 		if (p.getItemInHand().equals(shopemerald)) {
 			if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-				p.openInventory(MCTheWarzoneHub.shopMenu);
+				if (MCTheWarzoneHub.perms.playerHas(p, "hub.shop.testing")) {
+					p.openInventory(MCTheWarzoneHub.shopMenu);
+				} else {
+					p.sendMessage(ChatColor.RED + "The shop is still in development");
+					p.sendMessage(ChatColor.RED + "Check back later, to see if it has changed");
+				}
 			}
 		}
 	}

@@ -67,7 +67,7 @@ public class NavigationCompassListener implements Listener {
 	
 	public Location goldengunloc = new Location(Bukkit.getWorld("Lobby"), -94.5, 100, 335.5, 270, 7);
 	public Location hubloc = new Location(Bukkit.getWorld("Lobby"), -15.5, 110, 256.5, 0, 0);
-	public Location vaultloc = new Location(Bukkit.getWorld("world"), -12.5, 45, 928.5, 0, 0);
+	//public Location vaultloc = new Location(Bukkit.getWorld("world"), -12.5, 45, 928.5, 0, 0);
 	
 	private static NavigationCompassListener instance = new NavigationCompassListener();
 
@@ -81,7 +81,11 @@ public class NavigationCompassListener implements Listener {
 		Action a = event.getAction();
 		if (p.getItemInHand().equals(compass)) {
 			if (a == Action.RIGHT_CLICK_AIR || a == Action.RIGHT_CLICK_BLOCK) {
-				p.openInventory(MCTheWarzoneHub.compassMenu);
+				if (MCTheWarzoneHub.perms.playerHas(p, "warzonehub.compass")) {
+					p.openInventory(MCTheWarzoneHub.compassMenu);
+				} else {
+					p.sendMessage(ChatColor.RED + "You cannot open this yet!");
+				}
 			}
 		}
 	}
@@ -96,9 +100,6 @@ public class NavigationCompassListener implements Listener {
 				event.setCancelled(true);
 			} else if (itemClicked.equals(hub)) {
 				p.teleport(hubloc);
-				event.setCancelled(true);
-			} else if (itemClicked.equals(vault)) {
-				p.teleport(vaultloc);
 				event.setCancelled(true);
 			}
 		}
