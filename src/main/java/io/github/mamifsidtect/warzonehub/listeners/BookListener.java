@@ -23,16 +23,52 @@ public class BookListener implements Listener {
 		bmeta.addPage("");
 		bmeta.addPage("");
 		bmeta.addPage("");
+		bmeta.addPage("");
 		
 		//page 1
-		bmeta.setPage(1, ChatColor.BOLD + "Welcome to " + ChatColor.RESET + "" 
-						+ ChatColor.GOLD + "MCTheWarzone! " + ChatColor.BOLD + "" + 
-						ChatColor.BLACK + "We are a brand new gun-based minigame server! "
-						+ " We hope you enjoy your stay and please leave any"
-						+ " feedback on the forums!");
+		bmeta.setPage(1, "§lWelcome to"
+				+ "§r§6 MCTheWarzoneHub! §0§lWe"
+				+ "§r§l are a brand new"
+				+ "§r§l gun-based minigame"
+				+ "§r§l server! We hope"
+				+ "§r§l you enjoy your"
+				+ "§r§l stay and please"
+				+ "§r§l leave any"
+				+ "§r§l feedback on our"
+				+ "§r§l forums!");
 		
 		//page 2
-		bmeta.setPage(2, ChatColor.DARK_RED + "");
+		bmeta.setPage(2, "§4Rules"
+				+ "§r"
+				+ "§l1.) No unapproved"
+				+ "§r§lmods."
+				+ "§r"
+				+ "§r§l2.) No advertising"
+				+ "§r"
+				+ "§r§l3.) Do not abuse"
+				+ "§r§lor exploit bugs"
+				+ "§r§land glitches"
+				+ "§r"
+				+ "§r§l4.) Respect all"
+				+ "§r§lstaff and players");
+		
+		//page 3
+		bmeta.setPage(3, "§4Links"
+				+ "§r"
+				+ "§r§5Website and Forums:"
+				+ "§rhttp://mcthewarzone.com");
+		
+		bmeta.setPage(4, "§b§lThank you once"
+				+ "§r§b§lagain for joining"
+				+ "§r§b§lus on §r§6MCTheWarzone"
+				+ "§r§b§land we hope you"
+				+ "§r§b§lenjoy your stay!"
+				+ "§r§lIf you enjoy the"
+				+ "§r§lserver, be sure to"
+				+ "§r§lpurhcase a §r§aRANK"
+				+ "§r§lto support us at"
+				+ "§r"
+				+ "§rhttp://mcthewarzone.com");
 		
 		bmeta.setAuthor("MCTheWarzone");
 		bmeta.setDisplayName(ChatColor.GOLD + "Welcome to MCTheWarzone!");

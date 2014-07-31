@@ -50,10 +50,14 @@ public class SnowballerListener implements Listener {
 	@EventHandler  (priority = EventPriority.HIGHEST)
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		Player p = event.getPlayer();
+		
+		event.setJoinMessage(null);
+		p.teleport(new Location(Bukkit.getWorld("Lobby"), -15.5, 110, 256.5, 0, 0));
+		p.getInventory().clear();
+		p.setHealth(20);
+		p.setFoodLevel(20);
+		
 		if (MCTheWarzoneHub.getPlugin().getConfig().getBoolean("Player Join Items.Snowballer.Enabled") == true) {
-			event.setJoinMessage(null);
-			p.teleport(new Location(Bukkit.getWorld("Lobby"), -15.5, 110, 256.5, 0, 0));
-			p.getInventory().clear();
 			p.getInventory().setItem(MCTheWarzoneHub.getPlugin().getConfig().getInt("Player Join Items.Snowballer.Inventory Slot") - 1, new ItemStack(snowballer));
 		}
 	}

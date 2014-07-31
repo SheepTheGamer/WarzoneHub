@@ -53,6 +53,7 @@ public class MCTheWarzoneHub extends JavaPlugin {
 	public static Inventory trailShopMenu;
 	public static Inventory equipMenu;
 	public static Inventory compassMenu;
+	public static Inventory chiefKits, captainKits, dogtagKits;
 	
 	public final ShopInventoryListener sil = new ShopInventoryListener();
 	public final PetShopInventoryListener psil = new PetShopInventoryListener();
@@ -81,27 +82,47 @@ public class MCTheWarzoneHub extends JavaPlugin {
 		}
 		//End
 		
-		equipMenu = Bukkit.createInventory(null, configuration.getInt("Equipment Menu Screen.Size", 9), ChatColor.BLUE + "Equipment Menu"); {
+		equipMenu = Bukkit.createInventory(null, configuration.getInt("Inventories.Equipment Menu Screen.Size", 9), ChatColor.BLUE + "Equipment Menu"); {
 			
 		}
-		kitShopMenu = Bukkit.createInventory(null, configuration.getInt("Kit Shop Screen.Size", 9), ChatColor.BLUE + "Kit Shop"); {
-			kitShopMenu.setItem(2, new ItemStack(ksil.heavy));
-			kitShopMenu.setItem(6, new ItemStack(ksil.slugger));
+		
+		kitShopMenu = Bukkit.createInventory(null, configuration.getInt("Inventories.Kit Shop Screen.Size", 9), ChatColor.BLUE + "Kit Shop"); {
+			kitShopMenu.setItem(configuration.getInt("Inventories.Kit Shop Screen.Items.Plus") - 1, new ItemStack(ksil.iingot));
+			kitShopMenu.setItem(configuration.getInt("Inventories.Kit Shop Screen.Items.Premium") - 1, new ItemStack(ksil.gingot));
+			kitShopMenu.setItem(configuration.getInt("Inventories.Kit Shop Screen.Items.Dogtags") - 1, new ItemStack(ksil.dogtags));
 		}		
-		mapShopMenu = Bukkit.createInventory(null, configuration.getInt("Map Shop Screen.Size", 9), ChatColor.BLUE + "Map Shop"); {
+		mapShopMenu = Bukkit.createInventory(null, configuration.getInt("Inventories.Map Shop Screen.Size", 9), ChatColor.BLUE + "Map Shop"); {
 			
 		}
-		petShopMenu = Bukkit.createInventory(null, configuration.getInt("Pet Shop Screen.Size", 36), ChatColor.BLUE + "Pet Shop"); {
+		petShopMenu = Bukkit.createInventory(null, configuration.getInt("Inventories.Pet Shop Screen.Size", 36), ChatColor.BLUE + "Pet Shop"); {
 			
 		}
-		shopMenu = Bukkit.createInventory(null, configuration.getInt("Main Shop Screen.Size", 9), ChatColor.BLUE + "Main Shop"); {
+		shopMenu = Bukkit.createInventory(null, configuration.getInt("Inventories.Main Shop Screen.Size", 9), ChatColor.BLUE + "Main Shop"); {
 			shopMenu.setItem(configuration.getInt("Inventories.Main Shop Screen.Items.Pet Shop") - 1, new ItemStack(sil.pets));
 			shopMenu.setItem(configuration.getInt("Inventories.Main Shop Screen.Items.Map Shop") - 1, new ItemStack(sil.maps));
 			shopMenu.setItem(configuration.getInt("Inventories.Main Shop Screen.Items.Trail Shop") - 1, new ItemStack(sil.trails));
 			shopMenu.setItem(configuration.getInt("Inventories.Main Shop Screen.Items.Kit Shop") - 1, new ItemStack(sil.kits));
 		}
 		
-		trailShopMenu = Bukkit.createInventory(null, configuration.getInt("Trail Shop Screen.Size", 36), ChatColor.BLUE + "Trail Shop"); {
+		chiefKits = Bukkit.createInventory(null, configuration.getInt("Inventories.Plus Loadout Menu.Size", 9), ChatColor.BLUE + "Plus Loadout Shop"); {
+			chiefKits.setItem(configuration.getInt("Inventories.Plus Loadout Menu.Items.Marksman") - 1, new ItemStack(ksil.marksman));
+			chiefKits.setItem(configuration.getInt("Inventories.Plus Loadout Menu.Items.Predator") - 1, new ItemStack(ksil.predator));
+			chiefKits.setItem(configuration.getInt("Inventories.Plus Loadout Menu.Items.Tactical") - 1, new ItemStack(ksil.tactical));
+		}
+		
+		captainKits = Bukkit.createInventory(null, configuration.getInt("Inventories.Premium Loadout Menu.Size", 9), ChatColor.BLUE + "Premium Loadout Shop"); {
+			captainKits.setItem(configuration.getInt("Inventories.Premium Loadout Menu.Items.Assassin") - 1, new ItemStack(ksil.assassin));
+			captainKits.setItem(configuration.getInt("Inventories.Premium Loadout Menu.Items.Stalker") - 1, new ItemStack(ksil.stalker));
+			captainKits.setItem(configuration.getInt("Inventories.Premium Loadout Menu.Items.Soldier") - 1, new ItemStack(ksil.soldier));
+			captainKits.setItem(configuration.getInt("Inventories.Premium Loadout Menu.Items.Grenadier") - 1, new ItemStack(ksil.grenadier));
+		}
+		
+		dogtagKits = Bukkit.createInventory(null, configuration.getInt("Inventories.Dogtag Loadout Menu.Size", 9), ChatColor.BLUE + "Dogtag Loadout Shop"); {
+			dogtagKits.setItem(configuration.getInt("Inventories.Dogtag Loadout Menu.Items.Slugger") - 1, new ItemStack(ksil.slugger));
+			dogtagKits.setItem(configuration.getInt("Inventories.Dogtag Loadout Menu.Items.Heavy") - 1, new ItemStack(ksil.heavy));
+		}
+		
+		trailShopMenu = Bukkit.createInventory(null, configuration.getInt("Inventories.Trail Shop Screen.Size", 36), ChatColor.BLUE + "Trail Shop"); {
 			
 		}
 		

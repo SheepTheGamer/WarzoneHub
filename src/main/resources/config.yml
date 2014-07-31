@@ -2,7 +2,7 @@
 #                                                                   #
 #           This is the default configuration for the hub           #
 #                 You can change it however you want                #
-#                      Config Version: 0.0.0.3                      #
+#                      Config Version: 0.0.0.5                      #
 #                        Author: mamifsidtect                       #
 #                                                                   #
 #####################################################################
@@ -34,7 +34,6 @@ Inventories:
   Compass Menu:
     Size: 9
     Items:
-      The Vault: 2
       Golden Gun: 8
       Hub: 5
   #Main Shop Menu
@@ -49,8 +48,27 @@ Inventories:
   Kit Shop Screen:
     Size: 9
     Items:
-      Slugger: 3
-      Heavy: 7
+      Plus: 2
+      Premium: 5
+      Dogtags: 8
+  Plus Loadout Menu:
+    Size: 9
+    Items:
+      Marksman: 2
+      Predator: 5
+      Tactical: 8
+  Premium Loadout Menu:
+    Size: 9
+    Items:
+      Assassin: 2
+      Stalker: 4
+      Soldier: 6
+      Grenadier: 8
+  Dogtag Loadout Menu:
+    Size: 9
+    Items:
+      Slugger: 6
+      Heavy: 4
   #Map shop
   Map Shop Screen:
     Size: 9

@@ -1,9 +1,7 @@
 package io.github.mamifsidtect.warzonehub.listeners;
 
-import io.github.mamifsidtect.goldengun.managers.ArenaManager;
 import io.github.mamifsidtect.warzonehub.MCTheWarzoneHub;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -45,17 +43,6 @@ public class ScoreboardListener implements Listener {
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		Player p = event.getPlayer();
-		if (Bukkit.getServer().getOnlinePlayers().size() >= 1) {
-			for (Player onlinePlayers : Bukkit.getServer().getOnlinePlayers()) {
-				if (ArenaManager.getInstance().getArena(onlinePlayers) == null) {
-					sendScoreboardToPlayer(p);
-					sendScoreboardToPlayer(onlinePlayers);
-				} else {
-					sendScoreboardToPlayer(p);
-				}
-			}
-		} else if (Bukkit.getServer().getOnlinePlayers().size() <= 1) {
-			sendScoreboardToPlayer(p);
-		}
+		sendScoreboardToPlayer(p);
 	}
 }
