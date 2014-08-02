@@ -26,6 +26,7 @@ import net.milkbowl.vault.permission.Permission;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -81,6 +82,10 @@ public class MCTheWarzoneHub extends JavaPlugin {
 			logger.info("Using previous config!");
 		}
 		//End
+		
+		for (World w : Bukkit.getServer().getWorlds()) {
+			w.setStorm(false);
+		}
 		
 		equipMenu = Bukkit.createInventory(null, configuration.getInt("Inventories.Equipment Menu Screen.Size", 9), ChatColor.BLUE + "Equipment Menu"); {
 			

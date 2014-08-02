@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
@@ -23,11 +24,10 @@ public class BookListener implements Listener {
 		bmeta.addPage("");
 		bmeta.addPage("");
 		bmeta.addPage("");
-		bmeta.addPage("");
 		
 		//page 1
 		bmeta.setPage(1, "§lWelcome to"
-				+ "§r§6 MCTheWarzoneHub! §0§lWe"
+				+ "§r§6 MCTheWarzone! §0§lWe"
 				+ "§r§l are a brand new"
 				+ "§r§l gun-based minigame"
 				+ "§r§l server! We hope"
@@ -38,37 +38,33 @@ public class BookListener implements Listener {
 				+ "§r§l forums!");
 		
 		//page 2
-		bmeta.setPage(2, "§4Rules"
-				+ "§r"
-				+ "§l1.) No unapproved"
-				+ "§r§lmods."
-				+ "§r"
-				+ "§r§l2.) No advertising"
-				+ "§r"
-				+ "§r§l3.) Do not abuse"
-				+ "§r§lor exploit bugs"
-				+ "§r§land glitches"
-				+ "§r"
-				+ "§r§l4.) Respect all"
-				+ "§r§lstaff and players");
-		
+		bmeta.setPage(2, "§4Rules§0"
+				+ "§r "
+				+ "§r§l 1.) No unapproved"
+				+ "§r§l mods."
+				+ "§r "
+				+ "§r§l 2.) No advertising"
+				+ "§r "
+				+ "§r§l 3.) Do not abuse"
+				+ "§r§l or exploit bugs and"
+				+ "§r§l glitches"
+				+ "§r "
+				+ "§r§l 4.) Respect all"
+				+ "§r§l staff and players");
+				
 		//page 3
-		bmeta.setPage(3, "§4Links"
-				+ "§r"
-				+ "§r§5Website and Forums:"
-				+ "§rhttp://mcthewarzone.com");
-		
-		bmeta.setPage(4, "§b§lThank you once"
-				+ "§r§b§lagain for joining"
-				+ "§r§b§lus on §r§6MCTheWarzone"
-				+ "§r§b§land we hope you"
-				+ "§r§b§lenjoy your stay!"
-				+ "§r§lIf you enjoy the"
-				+ "§r§lserver, be sure to"
-				+ "§r§lpurhcase a §r§aRANK"
-				+ "§r§lto support us at"
-				+ "§r"
-				+ "§rhttp://mcthewarzone.com");
+		bmeta.setPage(3, "§b§lThank you once"
+				+ "§b§l again for joining"
+				+ "§b§l us on §6MCTheWarzone"
+				+ "§b§l and we hope you"
+				+ "§b§l enjoy your stay!"
+				+ "§r§l "
+				+ "§r§l If you enjoy the"
+				+ "§r§l server, be sure to"
+				+ "§r§l purhcase a §aRANK"
+				+ "§r§l to support us at"
+				+ "§r "
+				+ "§r http://mcthewarzone.com");
 		
 		bmeta.setAuthor("MCTheWarzone");
 		bmeta.setDisplayName(ChatColor.GOLD + "Welcome to MCTheWarzone!");
@@ -76,7 +72,7 @@ public class BookListener implements Listener {
 		book.setItemMeta(bmeta);
 	}
 
-	@EventHandler
+	@EventHandler (priority = EventPriority.HIGHEST)
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		event.getPlayer().getInventory().setItem(MCTheWarzoneHub.getPlugin().getConfig().getInt("Player Join Items.Welcome Book.Inventory Slot") - 1, new ItemStack(book));	
 	}
