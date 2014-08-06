@@ -39,7 +39,6 @@ public class BookListener implements Listener {
 		
 		//page 2
 		bmeta.setPage(2, "§4Rules§0"
-				+ "§r "
 				+ "§r§l 1.) No unapproved"
 				+ "§r§l mods."
 				+ "§r "
@@ -51,7 +50,7 @@ public class BookListener implements Listener {
 				+ "§r "
 				+ "§r§l 4.) Respect all"
 				+ "§r§l staff and players");
-				
+				+ "§r "
 		//page 3
 		bmeta.setPage(3, "§b§lThank you once"
 				+ "§b§l again for joining"
